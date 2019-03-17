@@ -26,7 +26,5 @@ git clone https://gitee.com/tecmz/gshop_weapp.git
 
 商业授权
 
-如需使用请联系QQ：2131311518
-
-长期技术支持：http://tecmz.com
+如需使用请联系 http://tecmz.com
 
