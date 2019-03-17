@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "at-tabs": "../npm/taro-ui/dist/weapp/components/tabs/index",
+    "order-item": "../components-app/OrderItem/index",
+    "list-empty": "../components/ListEmpty/index",
+    "list-loading": "../components/ListLoading/index",
+    "list-no-more": "../components/ListNoMore/index",
+    "order-consign-qrcode": "../components-app/OrderConsignQrcode/index"
+  },
+  "navigationBarTitleText": "我的订单"
+}

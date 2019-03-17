@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "raw-link": "../components/RawLink/index",
+    "link": "../components/Link/index",
+    "placeholder": "../components/Placeholder/index"
+  },
+  "navigationBarTitleText": "我的"
+}

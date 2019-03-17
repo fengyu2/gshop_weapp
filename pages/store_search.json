@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "list-empty": "../components/ListEmpty/index",
+    "list-loading": "../components/ListLoading/index",
+    "list-no-more": "../components/ListNoMore/index"
+  },
+  "navigationBarTitleText": "附近的社区购"
+}

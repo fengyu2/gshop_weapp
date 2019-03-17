@@ -1,0 +1,15 @@
+<block>
+    <view>
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-form">
+            <at-form __triggerObserer="{{ _triggerObserer }}">
+                <at-input name="{{anonymousState__temp}}" __triggerObserer="{{ _triggerObserer }}" title="用户" type="text" placeholder="输入用户名" value="{{username}}" disabled="{{true}}"></at-input>
+                <at-input name="{{anonymousState__temp2}}" __triggerObserer="{{ _triggerObserer }}" title="新密码" type="password" placeholder="输入新密码" clear="{{true}}" value="{{password}}" bindonchange="anonymousFunc0" __fn_onChange="{{true}}"></at-input>
+                <at-input name="{{anonymousState__temp3}}" __triggerObserer="{{ _triggerObserer }}" title="重复新密码" type="password" placeholder="重复输入新密码" clear="{{true}}" value="{{passwordRepeat}}" bindonchange="anonymousFunc1" __fn_onChange="{{true}}"></at-input>
+            </at-form>
+            <view class="pb-form-submit">
+                <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" bindonclick="anonymousFunc2" __fn_onClick="{{true}}">确认重置密码</at-button>
+            </view>
+        </view>
+    </view>
+</block>

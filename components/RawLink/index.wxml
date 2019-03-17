@@ -1,0 +1,5 @@
+<block>
+    <view bindtap="anonymousFunc0">
+        <slot></slot>
+    </view>
+</block>

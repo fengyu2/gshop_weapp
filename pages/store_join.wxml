@@ -1,0 +1,21 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-store-join">
+            <view class="slogan">成为团长</view>
+            <view class="slogan-title">引领品质生活</view>
+            <view class="form">
+                <at-form __triggerObserer="{{ _triggerObserer }}">
+                    <at-input name="{{anonymousState__temp}}" __triggerObserer="{{ _triggerObserer }}" clear="{{true}}" type="text" placeholder="请输入您的姓名" value="{{name}}" bindonchange="anonymousFunc0" __fn_onChange="{{true}}"></at-input>
+                    <at-input name="{{anonymousState__temp2}}" __triggerObserer="{{ _triggerObserer }}" clear="{{true}}" type="text" placeholder="请输入您所在城市与县区名称" value="{{area}}" bindonchange="anonymousFunc1" __fn_onChange="{{true}}"></at-input>
+                    <at-input name="{{anonymousState__temp3}}" __triggerObserer="{{ _triggerObserer }}" clear="{{true}}" type="text" placeholder="请输入您的小区名称" value="{{district}}" bindonchange="anonymousFunc2" __fn_onChange="{{true}}"></at-input>
+                    <at-input name="{{anonymousState__temp4}}" __triggerObserer="{{ _triggerObserer }}" clear="{{true}}" type="text" placeholder="请输入您的手机号码" value="{{phone}}" bindonchange="anonymousFunc3" __fn_onChange="{{true}}"></at-input>
+                    <at-input name="{{anonymousState__temp5}}" __triggerObserer="{{ _triggerObserer }}" clear="{{true}}" type="text" placeholder="请输入您的微信号码" value="{{wechat}}" bindonchange="anonymousFunc4" __fn_onChange="{{true}}"></at-input>
+                    <view class="action">
+                        <at-button formType="submit" __triggerObserer="{{ _triggerObserer }}" bindonclick="doSubmit" __fn_onClick="{{true}}">提交</at-button>
+                    </view>
+                </at-form>
+            </view>
+        </view>
+    </view>
+</block>

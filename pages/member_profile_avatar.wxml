@@ -1,0 +1,6 @@
+<block>
+    <view>
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <image-cropper image="{{store.memberUser.avatar}}" __triggerObserer="{{ _triggerObserer }}" bindoncrop="onCrop" __fn_onCrop="{{true}}"></image-cropper>
+    </view>
+</block>

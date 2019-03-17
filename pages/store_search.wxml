@@ -1,0 +1,25 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-store-search-title">请选择距离您最近的团长为您服务</view>
+        <view class="pb-store-search-item" wx:for="{{records}}" wx:for-item="item">
+            <view class="distance"><text class="iconfont"></text>{{item.distance}}</view>
+            <view class="avatar">
+                <image class="img" src="{{item.cover}}"></image>
+            </view>
+            <view class="username">{{item.name}}</view>
+            <view class="name">{{item.memberUsername}}</view>
+            <view class="address">{{item.addressArea}}{{item.addressDetail}}</view>
+            <view class="enter" bindtap="doChange" data-e-tap-so="this" data-e-tap-a-a="{{item.id}}">进入团长小区</view>
+        </view>
+        <block wx:if="{{empty}}">
+            <list-empty __triggerObserer="{{ _triggerObserer }}"></list-empty>
+        </block>
+        <block wx:if="{{loading}}">
+            <list-loading __triggerObserer="{{ _triggerObserer }}"></list-loading>
+        </block>
+        <block wx:if="{{noMore}}">
+            <list-no-more __triggerObserer="{{ _triggerObserer }}"></list-no-more>
+        </block>
+    </view>
+</block>

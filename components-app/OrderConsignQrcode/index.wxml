@@ -1,0 +1,17 @@
+<block>
+    <view>
+        <block wx:if="{{show}}">
+            <view class="pb-order-consign-qrcode" bindtap="anonymousFunc0">
+                <view class="box">
+                    <view class="code">提货码：{{code}}</view>
+                    <view class="barcode">
+                        <canvas class="canvas" canvas-id="barcode"></canvas>
+                    </view>
+                    <view class="qrcode">
+                        <canvas class="canvas" canvas-id="qrcode"></canvas>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</block>

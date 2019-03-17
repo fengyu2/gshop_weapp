@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "at-tabs": "../npm/taro-ui/dist/weapp/components/tabs/index",
+    "at-tabs-pane": "../npm/taro-ui/dist/weapp/components/tabs-pane/index",
+    "at-float-layout": "../npm/taro-ui/dist/weapp/components/float-layout/index",
+    "at-input-number": "../npm/taro-ui/dist/weapp/components/input-number/index"
+  },
+  "navigationBarTitleText": "商品详情"
+}

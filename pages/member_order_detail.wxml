@@ -1,0 +1,12 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <order-item showDetail="{{false}}" __triggerObserer="{{ _triggerObserer }}" item="{{order}}" bindonshowqrcode="doShowQrcode" bindonrefresh="doInit" __fn_onShowQrcode="{{true}}" __fn_onRefresh="{{true}}"></order-item>
+        <panel-head title="提货人信息" __triggerObserer="{{ _triggerObserer }}"></panel-head>
+        <at-list __triggerObserer="{{ _triggerObserer }}">
+            <at-list-item title="姓名" __triggerObserer="{{ _triggerObserer }}" extraText="{{order.consigneeName}}"></at-list-item>
+            <at-list-item title="手机" __triggerObserer="{{ _triggerObserer }}" extraText="{{order.consigneePhone}}"></at-list-item>
+        </at-list>
+        <order-consign-qrcode bindonref="anonymousFunc0" __triggerObserer="{{ _triggerObserer }}" __fn_onRef="{{true}}"></order-consign-qrcode>
+    </view>
+</block>

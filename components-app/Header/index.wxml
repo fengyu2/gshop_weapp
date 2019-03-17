@@ -1,0 +1,10 @@
+<block>
+    <block wx:if="{{ApiConstant.ENV === 'WEAPP'}}">
+        <view>
+            <view></view>
+        </view>
+    </block>
+    <block wx:else>
+        <at-nav-bar title="{{title}}" __triggerObserer="{{ _triggerObserer }}"></at-nav-bar>
+    </block>
+</block>

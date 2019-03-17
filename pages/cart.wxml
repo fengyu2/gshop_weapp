@@ -1,0 +1,53 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-cart-tool">
+            <block wx:if="{{records.length > 0 && !editing}}">
+                <view class="btn" bindtap="anonymousFunc0">编辑</view>
+            </block>
+            <block wx:if="{{records.length > 0 && editing}}">
+                <view class="btn" bindtap="anonymousFunc1">编辑完成</view>
+            </block>
+        </view>
+        <view>
+            <view class="pb-cart-item" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="itemIndex">
+                <block wx:if="{{item.$original.checked}}">
+                    <view class="checkbox iconfont checked" bindtap="doUncheck" data-e-tap-so="this" data-e-tap-a-a="{{itemIndex}}"></view>
+                </block>
+                <block wx:if="{{!item.$original.checked}}">
+                    <view class="checkbox iconfont" bindtap="doCheck" data-e-tap-so="this" data-e-tap-a-a="{{itemIndex}}"></view>
+                </block>
+                <navigator class="cover" url="{{'/pages/goods?id=' + item.$original.goodsId}}" style="{{item.$loopState__temp2}}"></navigator>
+                <view class="title">{{item.$original.goodsTitle}}</view>
+                <view class="spec"><text class="item" wx:for="{{item.$original.spec}}" wx:for-item="specValue" wx:for-index="specName">{{specName}}:{{specValue}}</text>
+                </view>
+                <view class="price">¥<text class="value">{{item.$original.goodsPrice}}</text>
+                </view>
+                <block wx:if="{{editing}}">
+                    <view class="delete iconfont" bindtap="doDelete" data-e-tap-so="this" data-e-tap-a-a="{{itemIndex}}"></view>
+                </block>
+                <block wx:if="{{!editing}}">
+                    <view class="amount">
+                        <at-input-number min="{{0}}" __triggerObserer="{{ _triggerObserer }}" step="{{1}}" value="{{item.$original.amount}}" bindonchange="doChangeAmount" __fn_onChange="{{true}}" data-e-onchange-so="this" data-e-onchange-a-a="{{itemIndex}}"></at-input-number>
+                    </view>
+                </block>
+            </view>
+            <block wx:if="{{records.length === 0}}">
+                <empty-view __triggerObserer="{{ _triggerObserer }}"></empty-view>
+            </block>
+        </view>
+        <view class="pb-cart-toolbox-placeholder"></view>
+        <view class="pb-cart-toolbox">
+            <view class="submit" bindtap="doSubmit">去结算</view>
+            <block wx:if="{{anonymousState__temp4}}">
+                <view class="checkbox iconfont checked" bindtap="doUncheckAll"></view>
+            </block>
+            <block wx:if="{{anonymousState__temp5}}">
+                <view class="checkbox iconfont" bindtap="doCheckAll"></view>
+            </block>
+            <view class="checkbox-text">全选</view>
+            <view class="total">合计：¥<text className="value" __triggerObserer="{{ _triggerObserer }}">{{anonymousState__temp3}}</text>
+            </view>
+        </view>
+    </view>
+</block>

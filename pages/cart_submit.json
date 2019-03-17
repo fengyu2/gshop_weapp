@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "page-top-notice": "../components/PageTopNotice/index",
+    "at-form": "../npm/taro-ui/dist/weapp/components/form/index",
+    "at-input": "../npm/taro-ui/dist/weapp/components/input/index",
+    "placeholder": "../components/Placeholder/index",
+    "order-goods-item": "../components-app/OrderGoodsItem/index",
+    "at-float-layout": "../npm/taro-ui/dist/weapp/components/float-layout/index"
+  },
+  "navigationBarTitleText": "提交订单"
+}

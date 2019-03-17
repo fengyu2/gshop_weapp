@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "image-cropper": "../components/ImageCropper/index"
+  },
+  "navigationBarTitleText": "修改头像"
+}

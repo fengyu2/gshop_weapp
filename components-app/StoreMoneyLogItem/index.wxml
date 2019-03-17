@@ -1,0 +1,14 @@
+<block>
+    <view class="item">
+        <view class="line">金额：
+            <block wx:if="{{item.value < 0}}"><text class="pb-text-danger">- ¥{{-item.value}}</text>
+            </block>
+            <block wx:if="{{item.value > 0}}"><text class="pb-text-success">+ ¥{{item.value}}</text>
+            </block>
+        </view>
+        <view>时间：{{item.created_at}}</view>
+        <block wx:if="{{!!item.remark}}">
+            <view>备注：{{item.remark}}</view>
+        </block>
+    </view>
+</block>

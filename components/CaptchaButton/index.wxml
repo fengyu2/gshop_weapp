@@ -1,0 +1,15 @@
+<block>
+    <view>
+        <view style="{{anonymousState__temp}}">
+            <block wx:if="{{retryTimes === 0 && timer === null}}">
+                <at-button size="small" __triggerObserer="{{ _triggerObserer }}" bindonclick="doCaptcha" __fn_onClick="{{true}}">获取验证码</at-button>
+            </block>
+            <block wx:if="{{retryTimes > 0 && timer === null}}">
+                <at-button size="small" __triggerObserer="{{ _triggerObserer }}" bindonclick="doCaptcha" __fn_onClick="{{true}}">重新获取</at-button>
+            </block>
+            <block wx:if="{{time > 0}}">
+                <at-button size="small" __triggerObserer="{{ _triggerObserer }}" disabled="{{true}}">{{time}}秒</at-button>
+            </block>
+        </view>
+    </view>
+</block>

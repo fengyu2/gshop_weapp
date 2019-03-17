@@ -1,0 +1,16 @@
+<block>
+    <view>
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-form">
+            <view class="pb-form-submit">
+                <at-button bindonclick="anonymousFunc0" __triggerObserer="{{ _triggerObserer }}" __fn_onClick="{{true}}"><text class="iconfont"></text>通过手机找回</at-button>
+            </view>
+            <view class="pb-form-submit">
+                <at-button bindonclick="anonymousFunc1" __triggerObserer="{{ _triggerObserer }}" __fn_onClick="{{true}}"><text class="iconfont"></text>通过邮箱找回</at-button>
+            </view>
+        </view>
+        <view class="pb-padding-h pb-padding-v pb-text-center">
+            <link url="[back]" __triggerObserer="{{ _triggerObserer }}">返回登录</link>
+        </view>
+    </view>
+</block>

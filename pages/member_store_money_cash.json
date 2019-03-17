@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "at-button": "../npm/taro-ui/dist/weapp/components/button/index",
+    "at-form": "../npm/taro-ui/dist/weapp/components/form/index",
+    "at-input": "../npm/taro-ui/dist/weapp/components/input/index",
+    "panel-head": "../components/PanelHead/index",
+    "at-radio": "../npm/taro-ui/dist/weapp/components/radio/index"
+  },
+  "navigationBarTitleText": "佣金提现"
+}

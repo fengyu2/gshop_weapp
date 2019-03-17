@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "at-input-number": "../npm/taro-ui/dist/weapp/components/input-number/index",
+    "empty-view": "../components/EmptyView/index"
+  },
+  "navigationBarTitleText": "购物车"
+}

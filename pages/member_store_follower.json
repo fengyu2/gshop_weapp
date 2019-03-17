@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "page-store-picker": "../components-app/PageStorePicker/index",
+    "member-user-item": "../components-app/MemberUserItem/index",
+    "list-empty": "../components/ListEmpty/index",
+    "list-loading": "../components/ListLoading/index",
+    "list-no-more": "../components/ListNoMore/index"
+  },
+  "navigationBarTitleText": "我的团粉"
+}

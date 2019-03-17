@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "list-empty": "../components/ListEmpty/index",
+    "list-loading": "../components/ListLoading/index"
+  },
+  "navigationBarTitleText": "我加入的小区"
+}

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "at-form": "../npm/taro-ui/dist/weapp/components/form/index",
+    "at-input": "../npm/taro-ui/dist/weapp/components/input/index",
+    "at-button": "../npm/taro-ui/dist/weapp/components/button/index",
+    "link": "../components/Link/index"
+  },
+  "navigationBarTitleText": "注册"
+}

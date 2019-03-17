@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "at-list": "../npm/taro-ui/dist/weapp/components/list/index",
+    "placeholder": "../components/Placeholder/index",
+    "raw-link": "../components/RawLink/index",
+    "at-list-item": "../npm/taro-ui/dist/weapp/components/list/item/index"
+  },
+  "navigationBarTitleText": "我的资料"
+}

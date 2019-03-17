@@ -1,0 +1,11 @@
+<block>
+    <view class="pb-order-goods-item">
+        <navigator class="cover" style="{{anonymousState__temp}}"></navigator>
+        <view class="title">{{item.goodsTitle}}</view>
+        <view class="spec"><text class="item" wx:for="{{item.spec}}" wx:for-item="specValue" wx:for-index="specName">{{specName}}:{{specValue}}</text>
+        </view>
+        <view class="price">¥<text className="value" __triggerObserer="{{ _triggerObserer }}">{{item.goodsPrice}}{{item.fee}}</text>
+        </view>
+        <view class="amount">x{{item.amount}}</view>
+    </view>
+</block>

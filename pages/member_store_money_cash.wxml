@@ -1,0 +1,28 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <block wx:if="{{page === 'result'}}">
+            <view class="pb-msg">
+                <view class="icon iconfont pb-text-success"></view>
+                <view class="title">提现申请成功</view>
+                <view class="desc">资金将于1-7个工作日之内到账，请注意查收。</view>
+                <view class="pb-padding-h pb-padding-v">
+                    <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" bindonclick="anonymousFunc0" __fn_onClick="{{true}}">返回</at-button>
+                </view>
+            </view>
+        </block>
+        <block wx:if="{{page !== 'result'}}">
+            <view>
+                <at-form __triggerObserer="{{ _triggerObserer }}">
+                    <at-input name="{{anonymousState__temp}}" __triggerObserer="{{ _triggerObserer }}" title="提现金额" type="digit" placeholder="请输入提现金额" value="{{value}}" bindonchange="anonymousFunc1" __fn_onChange="{{true}}"></at-input>
+                </at-form>
+                <panel-head title="支付方式" __triggerObserer="{{ _triggerObserer }}"></panel-head>
+                <at-radio options="{{anonymousState__temp2}}" __triggerObserer="{{ _triggerObserer }}" value="{{type}}" bindonclick="anonymousFunc2" __fn_onClick="{{true}}"></at-radio>
+                <view class="pb-padding-v pb-padding-h">
+                    <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" bindonclick="doSubmit" __fn_onClick="{{true}}">确定提现</at-button>
+                </view>
+                <view class="pb-text-muted pb-padding-v pb-padding-h">当前最多可提现金额为 ¥{{total}}</view>
+            </view>
+        </block>
+    </view>
+</block>

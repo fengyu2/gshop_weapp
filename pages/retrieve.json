@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "at-button": "../npm/taro-ui/dist/weapp/components/button/index",
+    "link": "../components/Link/index"
+  },
+  "navigationBarTitleText": "找回密码"
+}

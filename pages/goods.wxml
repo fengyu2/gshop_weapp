@@ -1,0 +1,117 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-goods-basic">
+            <view class="swiper">
+                <swiper class="images" indicator-color="#CCC" indicator-active-color="#FFF" circular="{{true}}" indicator-dots="{{true}}" autoplay="{{true}}">
+                    <swiper-item wx:for="{{loopArray0}}" wx:for-item="image">
+                        <view class="image" style="{{image.$loopState__temp2}}"></view>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <view class="info">
+                <view class="price">
+                    <view class="online">团购价：¥<text className="value" __triggerObserer="{{ _triggerObserer }}">{{basic.price}}</text>
+                    </view>
+                    <view class="market">零售价：¥<text className="value" __triggerObserer="{{ _triggerObserer }}">{{basic.marketPrice}}</text>
+                    </view>
+                </view>
+                <view class="stat">
+                    <view class="text">剩余{{basic._stock}}份</view>
+                    <view class="text">累计销售 {{stat.soldCount}}份</view>
+                </view>
+                <block wx:if="{{basic.startTimeEnable && basic._startTimeTs < basic._ts}}">
+                    <view class="countdown">
+                        <view class="text">距离开始仅剩</view>
+                        <view class="value">{{item._startTimeCountdown}}</view>
+                    </view>
+                </block>
+                <block wx:if="{{basic.endTimeEnable && basic._endTimeTs > basic._ts && (!basic.startTimeEnable || basic._startTimeTs > basic._ts)}}">
+                    <view class="countdown">
+                        <view class="text">距离结束仅剩</view>
+                        <view class="value">{{basic._endTimeCountdown}}</view>
+                    </view>
+                </block>
+            </view>
+            <view class="title">{{basic.title}}</view>
+            <view class="time">
+                <view class="ship">预计配送时间：{{stat.shipTime}}</view>
+                <view class="source">自营</view>
+            </view>
+            <view class="slogan">{{basic.slogan}}</view>
+        </view>
+        <at-tabs current="{{_tab}}" __triggerObserer="{{ _triggerObserer }}" tabList="{{anonymousState__temp3}}" bindonclick="anonymousFunc0" __fn_onClick="{{true}}">
+            <at-tabs-pane current="{{_tab}}" __triggerObserer="{{ _triggerObserer }}" index="{{0}}">
+                <rich-text nodes="{{detail.content}}"></rich-text>
+            </at-tabs-pane>
+            <at-tabs-pane current="{{_tab}}" __triggerObserer="{{ _triggerObserer }}" index="{{1}}">
+                <view class="pb-goods-buyers">
+                    <view class="item" wx:for="{{buyers.records}}" wx:for-item="item">
+                        <image class="avatar" src="{{item.avatar}}"></image>
+                        <view class="username">{{item.username}}</view>
+                        <view class="count">{{item.amount}}份</view>
+                        <view class="time">{{item.created_at}}</view>
+                    </view>
+                    <block wx:if="{{buyers.records.length == 0}}">
+                        <view class="empty">暂无记录</view>
+                    </block>
+                </view>
+            </at-tabs-pane>
+        </at-tabs>
+        <view class="pb-goods-bottom-bar-placeholder"></view>
+        <view class="pb-goods-bottom-bar">
+            <view class="icon" bindtap="anonymousFunc1">
+                <view class="iconfont"></view>
+                <view class="text">回首页</view>
+            </view>
+            <view class="icon" bindtap="anonymousFunc2">
+                <view class="iconfont"></view>
+                <view class="text">购物车</view>
+            </view>
+            <view class="btn" bindtap="anonymousFunc3">
+                <view class="cart">加入购物车</view>
+            </view>
+            <view class="btn" bindtap="anonymousFunc4">
+                <view class="buy">去结算</view>
+            </view>
+        </view>
+        <at-float-layout isOpened="{{_buy}}" __triggerObserer="{{ _triggerObserer }}" bindonclose="anonymousFunc5" __fn_onClose="{{true}}">
+            <view class="pb-goods-submit">
+                <view class="pb-goods-submit-info">
+                    <view class="cover">
+                        <image class="img" src="{{submitCover}}"></image>
+                    </view>
+                    <view class="title">{{basic.title}}</view>
+                    <view class="price">¥ <text class="value">{{submitPrice}}</text>
+                    </view>
+                    <view class="stock">库存 <text class="value">{{submitStock}}</text>
+                    </view>
+                </view>
+                <block wx:if="{{spec.param.length > 0}}">
+                    <view class="pb-goods-submit-spec">
+                        <view class="spec" wx:for="{{spec.param}}" wx:for-item="specItem" wx:for-index="index">
+                            <view class="name">{{specItem.name}}</view>
+                            <view class="list">
+                                <view bindtap="doSpecSelect" class="{{'item ' + (submitSpecSelect[specItem.name] == specValueItem ? 'active' : '')}}" wx:for="{{specItem.values}}" wx:for-item="specValueItem" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{specItem.name}}" data-e-tap-a-b="{{specValueItem}}">{{specValueItem}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+                <view class="pb-goods-submit-count">
+                    <view class="box">
+                        <at-input-number min="{{0}}" __triggerObserer="{{ _triggerObserer }}" max="{{submitAmountMax}}" step="{{1}}" value="{{submitAmount}}" bindonchange="anonymousFunc6" __fn_onChange="{{true}}"></at-input-number>
+                    </view>
+                    <view class="name">购买数量</view>
+                </view>
+                <view class="pb-goods-submit-foot">
+                    <block wx:if="{{_buyMode === 'cart'}}">
+                        <view class="cart" bindtap="doSubmit" data-e-tap-so="this" data-e-tap-a-a="cart">加入购物车</view>
+                    </block>
+                    <block wx:if="{{_buyMode === 'buy'}}">
+                        <view class="buy" bindtap="doSubmit" data-e-tap-so="this" data-e-tap-a-a="buy">立即购买</view>
+                    </block>
+                </view>
+            </view>
+        </at-float-layout>
+    </view>
+</block>

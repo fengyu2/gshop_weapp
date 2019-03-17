@@ -1,0 +1,32 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-member-store-sign">
+            <block wx:if="{{result === ''}}">
+                <view bindtap="doScan">
+                    <view class="icon iconfont"></view>
+                    <view class="text">点击启动扫一扫</view>
+                </view>
+            </block>
+            <block wx:if="{{result === 'success'}}">
+                <view>
+                    <view class="icon iconfont success"></view>
+                    <view class="text">取货成功</view>
+                </view>
+            </block>
+            <block wx:if="{{result === 'error'}}">
+                <view>
+                    <view class="icon iconfont danger"></view>
+                    <view class="text">{{resultMsg}}</view>
+                </view>
+            </block>
+            <view class="input">
+                <input class="code-input" name="value" type="text" placeholder="输入取货码" value="{{code}}" bindchange="anonymousFunc0" />
+                <view class="search iconfont" bindtap="doVerify"></view>
+            </view>
+            <view class="button">
+                <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" size="normal" bindonclick="doScan" __fn_onClick="{{true}}"><text class="iconfont"></text>启动扫一扫</at-button>
+            </view>
+        </view>
+    </view>
+</block>

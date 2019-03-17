@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "at-button": "../npm/taro-ui/dist/weapp/components/button/index"
+  },
+  "navigationBarTitleText": "扫描取货码"
+}

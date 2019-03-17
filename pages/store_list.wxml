@@ -1,0 +1,20 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-store-list-item" bindtap="doChange" wx:for="{{records}}" wx:for-item="item" data-e-tap-so="this" data-e-tap-a-a="{{item.id}}">
+            <view class="icon"><text class="iconfont"></text>
+            </view>
+            <view class="name">{{item.name}}</view>
+            <view class="address">{{item.addressArea}}{{item.addressDetail}}</view>
+        </view>
+        <block wx:if="{{empty}}">
+            <list-empty __triggerObserer="{{ _triggerObserer }}"></list-empty>
+        </block>
+        <block wx:if="{{loading}}">
+            <list-loading __triggerObserer="{{ _triggerObserer }}"></list-loading>
+        </block>
+        <view class="pb-page-link">您还可以
+            <navigator url="/pages/store_search" class="link">查看附近的团长</navigator>
+        </view>
+    </view>
+</block>

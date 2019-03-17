@@ -1,0 +1,39 @@
+<block>
+    <view class="pb-goods-item">
+        <view class="cover" bindtap="doView" style="{{anonymousState__temp}}">
+            <view class="slogan">{{item.slogan}}</view>
+            <block wx:if="{{item._stock <= 0}}">
+                <view class="sold-out">已售罄</view>
+            </block>
+        </view>
+        <view class="title">{{item.title}}</view>
+        <view class="price">
+            <view class="online">团购价：¥<text class="value">{{item.price}}</text>
+            </view>
+            <view class="market">零售价：¥<text class="value">{{item.marketPrice}}</text>
+            </view>
+        </view>
+        <view class="stat">
+            <view class="count">剩余 {{item._stock}}份</view>
+            <block wx:if="{{item.startTimeEnable && item._startTimeTs < item._ts}}">
+                <view class="countdown">距离开始：<text class="value">{{item._startTimeCountdown}}</text>
+                </view>
+            </block>
+            <block wx:if="{{item.endTimeEnable && item._endTimeTs > item._ts && (!item.startTimeEnable || item._startTimeTs > item._ts)}}">
+                <view class="countdown">距离结束：<text class="value">{{item._endTimeCountdown}}</text>
+                </view>
+            </block>
+            <view class="action">
+                <block wx:if="{{item._stock > 0 && !item._hasSpec}}">
+                    <view class="add-cart" bindtap="doAddCart">加入购物车</view>
+                </block>
+                <block wx:if="{{item._stock > 0 && item._hasSpec}}">
+                    <view class="add-cart" bindtap="doView">选择规则</view>
+                </block>
+                <block wx:if="{{item._stock <= 0}}">
+                    <view class="add-cart add-cart-sold-out">已售罄</view>
+                </block>
+            </view>
+        </view>
+    </view>
+</block>

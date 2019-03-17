@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "at-search-bar": "../npm/taro-ui/dist/weapp/components/search-bar/index",
+    "goods-item": "../components-app/GoodsItem/index",
+    "list-empty": "../components/ListEmpty/index",
+    "list-loading": "../components/ListLoading/index",
+    "list-no-more": "../components/ListNoMore/index"
+  },
+  "navigationBarTitleText": "首页"
+}

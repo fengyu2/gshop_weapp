@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "placeholder": "../components/Placeholder/index",
+    "at-button": "../npm/taro-ui/dist/weapp/components/button/index"
+  },
+  "navigationBarTitleText": "登录"
+}

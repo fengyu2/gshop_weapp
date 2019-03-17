@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/index",
+    "pages/login_weapp",
+    "pages/member",
+    "pages/member_profile",
+    "pages/login",
+    "pages/register",
+    "pages/retrieve",
+    "pages/retrieve_phone",
+    "pages/retrieve_email",
+    "pages/retrieve_reset",
+    "pages/member_profile_avatar",
+    "pages/member_profile_password",
+    "pages/member_profile_phone",
+    "pages/member_profile_email",
+    "pages/about",
+    "pages/goods",
+    "pages/cart",
+    "pages/cart_submit",
+    "pages/store_owner",
+    "pages/store_join",
+    "pages/store_list",
+    "pages/store_search",
+    "pages/member_order",
+    "pages/member_order_detail",
+    "pages/member_store_sign",
+    "pages/member_store_follower",
+    "pages/member_store_order",
+    "pages/member_store_money",
+    "pages/member_store_money_log",
+    "pages/member_store_money_cash",
+    "pages/member_store_money_cash_log",
+    "pages/member_store_commission"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FA1811",
+    "navigationBarTextStyle": "#FA1811"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index",
+        "text": "社区购",
+        "iconPath": "images/icon_gshop.png",
+        "selectedIconPath": "images/icon_gshop_active.png"
+      },
+      {
+        "pagePath": "pages/cart",
+        "text": "购物车",
+        "iconPath": "images/icon_cart.png",
+        "selectedIconPath": "images/icon_cart_active.png"
+      },
+      {
+        "pagePath": "pages/member",
+        "text": "我的",
+        "iconPath": "images/icon_user.png",
+        "selectedIconPath": "images/icon_user_active.png"
+      }
+    ],
+    "color": "#333",
+    "selectedColor": "#333",
+    "backgroundColor": "#fff",
+    "borderStyle": "#ccc"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

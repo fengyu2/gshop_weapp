@@ -1,0 +1,22 @@
+<block>
+    <view>
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <at-list __triggerObserer="{{ _triggerObserer }}">
+            <placeholder __triggerObserer="{{ _triggerObserer }}"></placeholder>
+            <raw-link url="/pages/member_profile_avatar" __triggerObserer="{{ _triggerObserer }}">
+                <at-list-item title="{{memberUser.username}}" __triggerObserer="{{ _triggerObserer }}" extraText="[修改头像]" thumb="{{memberUser.avatar}}"></at-list-item>
+            </raw-link>
+            <placeholder __triggerObserer="{{ _triggerObserer }}"></placeholder>
+            <raw-link url="/pages/member_profile_phone" __triggerObserer="{{ _triggerObserer }}">
+                <at-list-item title="手机" __triggerObserer="{{ _triggerObserer }}" extraText="{{anonymousState__temp}}"></at-list-item>
+            </raw-link>
+            <raw-link url="/pages/member_profile_email" __triggerObserer="{{ _triggerObserer }}">
+                <at-list-item title="邮箱" __triggerObserer="{{ _triggerObserer }}" extraText="{{anonymousState__temp2}}"></at-list-item>
+            </raw-link>
+            <placeholder __triggerObserer="{{ _triggerObserer }}"></placeholder>
+            <raw-link url="/pages/member_profile_password" __triggerObserer="{{ _triggerObserer }}">
+                <at-list-item title="修改密码" __triggerObserer="{{ _triggerObserer }}" arrow="right"></at-list-item>
+            </raw-link>
+        </at-list>
+    </view>
+</block>

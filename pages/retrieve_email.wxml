@@ -1,0 +1,24 @@
+<block>
+    <view>
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-form">
+            <at-form __triggerObserer="{{ _triggerObserer }}">
+                <at-input name="{{anonymousState__temp}}" __triggerObserer="{{ _triggerObserer }}" title="邮箱" clear="{{true}}" type="text" placeholder="输入 注册邮箱" value="{{email}}" bindonchange="anonymousFunc0" __fn_onChange="{{true}}"></at-input>
+                <at-input name="{{anonymousState__temp2}}" __triggerObserer="{{ _triggerObserer }}" clear="{{true}}" title="图片验证" type="text" maxLength="4" placeholder="输入 图片验证" value="{{captcha}}" bindonchange="anonymousFunc1" __fn_onChange="{{true}}">
+                    <block wx:if="{{captchaUrl}}">
+                        <image class="pb-input-captcha-image" bindtap="anonymousFunc2" src="{{captchaUrl}}"></image>
+                    </block>
+                </at-input>
+                <at-input name="{{anonymousState__temp3}}" __triggerObserer="{{ _triggerObserer }}" clear="{{true}}" title="邮箱验证" type="text" placeholder="输入 邮箱验证" value="{{verify}}" bindonchange="anonymousFunc3" __fn_onChange="{{true}}">
+                    <captcha-button url="member_auth/retrieve_email_verify" __triggerObserer="{{ _triggerObserer }}" dataKey="email" dataValue="{{email}}" captchaKey="captcha" captchaValue="{{captcha}}" bindonerror="doRefreshCaptcha" __fn_onError="{{true}}"></captcha-button>
+                </at-input>
+            </at-form>
+            <view class="pb-form-submit">
+                <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" bindonclick="anonymousFunc4" __fn_onClick="{{true}}">下一步</at-button>
+            </view>
+        </view>
+        <view class="pb-padding-h pb-padding-v pb-text-center">
+            <link url="[back]" __triggerObserer="{{ _triggerObserer }}">返回</link>
+        </view>
+    </view>
+</block>

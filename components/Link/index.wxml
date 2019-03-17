@@ -1,0 +1,2 @@
+<block><text class="pb-link" bindtap="anonymousFunc0"><slot></slot></text>
+</block>

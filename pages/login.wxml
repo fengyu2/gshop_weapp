@@ -1,0 +1,18 @@
+<block>
+    <view>
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-form">
+            <at-form __triggerObserer="{{ _triggerObserer }}">
+                <at-input name="{{anonymousState__temp}}" __triggerObserer="{{ _triggerObserer }}" title="用户" type="text" placeholder="输入 用户名/邮箱/手机" value="{{username}}" bindonchange="anonymousFunc0" __fn_onChange="{{true}}"></at-input>
+                <at-input name="{{anonymousState__temp2}}" __triggerObserer="{{ _triggerObserer }}" title="密码" type="password" placeholder="输入 密码" value="{{password}}" bindonchange="anonymousFunc1" __fn_onChange="{{true}}"></at-input>
+            </at-form>
+            <view class="pb-form-submit">
+                <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" bindonclick="anonymousFunc2" __fn_onClick="{{true}}">登录</at-button>
+            </view>
+        </view>
+        <view class="pb-padding-h pb-padding-v pb-text-center">
+            <link url="/pages/register" __triggerObserer="{{ _triggerObserer }}">立即注册</link><text class="pb-text-splitter">|</text>
+            <link url="/pages/retrieve" __triggerObserer="{{ _triggerObserer }}">忘记密码</link>
+        </view>
+    </view>
+</block>

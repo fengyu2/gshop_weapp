@@ -1,0 +1,14 @@
+<block>
+    <view>
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-about">
+            <view class="logo">
+                <image class="img" src="{{about.logo}}"></image>
+            </view>
+            <view class="name">{{about.name}}</view>
+            <view class="text">地址：{{about.address}}</view>
+            <view class="text">邮箱：{{about.email}}</view>
+            <view class="text">微信：{{about.wechat}}</view>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,11 @@
+<block>
+    <view>
+        <header __triggerObserer="{{ _triggerObserer }}"></header>
+        <placeholder __triggerObserer="{{ _triggerObserer }}"></placeholder>
+        <view class="pb-padding-h pb-login-weapp-text">用户登录</view>
+        <view class="pb-padding-h">
+            <at-button className="pb-login-weapp-oauth" __triggerObserer="{{ _triggerObserer }}" openType="getUserInfo" bindongetuserinfo="doSubmit" __fn_onGetUserInfo="{{true}}"><text class="iconfont"></text>微信授权登录</at-button>
+        </view>
+        <view class="pb-login-weapp-login" bindtap="anonymousFunc0">使用账号密码登录</view>
+    </view>
+</block>

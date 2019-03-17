@@ -1,0 +1,13 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-store-owner">
+            <view class="avatar">
+                <image class="img" src="{{store.cover}}"></image>
+            </view>
+            <view class="name">团长：{{store.addressName}}</view>
+            <view class="text">小区：{{store.name}}</view>
+            <view class="text">地址：{{store.addressArea}}{{store.addressDetail}}</view>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,139 @@
+<block>
+    <view>
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-member-head">
+            <view class="pb-member-head-avatar">
+                <block>
+                    <block wx:if="{{isLogin}}">
+                        <raw-link url="/pages/member_profile" __triggerObserer="{{ _triggerObserer }}">
+                            <image class="pb-member-head-avatar-image" src="{{store.memberUser.avatar}}"></image>
+                        </raw-link>
+                    </block>
+                    <block wx:else>
+                        <raw-link url="{{ApiConstant.LOGIN}}" __triggerObserer="{{ _triggerObserer }}">
+                            <image class="pb-member-head-avatar-image" src="{{store.memberUser.avatar}}"></image>
+                        </raw-link>
+                    </block>
+                </block>
+            </view>
+            <view class="pb-member-head-name">
+                <block>
+                    <block wx:if="{{isLogin}}">
+                        <link url="/pages/member_profile" __triggerObserer="{{ _triggerObserer }}">{{store.memberUser.username}}</link>
+                    </block>
+                    <block wx:else>
+                        <link url="{{ApiConstant.LOGIN}}" __triggerObserer="{{ _triggerObserer }}">注册 / 登录</link>
+                    </block>
+                </block>
+            </view>
+        </view>
+        <view style="{{anonymousState__temp}}"></view>
+        <block wx:if="{{isLogin && store.memberUser.adminStores.length > 0}}">
+            <view class="pb-member-panel">
+                <view class="title">团长中心</view>
+                <view class="at-row">
+                    <view class="at-col">
+                        <raw-link url="/pages/member_store_sign" __triggerObserer="{{ _triggerObserer }}">
+                            <view class="item"><text class="iconfont"></text>
+                                <view class="text">扫码提货</view>
+                            </view>
+                        </raw-link>
+                    </view>
+                    <view class="at-col">
+                        <raw-link url="/pages/member_store_follower" __triggerObserer="{{ _triggerObserer }}">
+                            <view class="item"><text class="iconfont"></text>
+                                <view class="text">我的团粉</view>
+                            </view>
+                        </raw-link>
+                    </view>
+                    <view class="at-col">
+                        <raw-link url="/pages/member_store_order" __triggerObserer="{{ _triggerObserer }}">
+                            <view class="item"><text class="iconfont"></text>
+                                <view class="text">推广订单</view>
+                            </view>
+                        </raw-link>
+                    </view>
+                    <view class="at-col">
+                        <raw-link url="/pages/member_store_money" __triggerObserer="{{ _triggerObserer }}">
+                            <view class="item"><text class="iconfont"></text>
+                                <view class="text">推广佣金</view>
+                            </view>
+                        </raw-link>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class="pb-member-panel">
+            <view class="title">我的订单</view>
+            <view class="at-row">
+                <view class="at-col">
+                    <raw-link url="{{isLogin ? '/pages/member_order?status=' + OrderStatus.WAIT_SIGN.value : ApiConstant.LOGIN}}" __triggerObserer="{{ _triggerObserer }}">
+                        <view class="item"><text class="iconfont"></text>
+                            <view class="text">待取货</view>
+                        </view>
+                    </raw-link>
+                </view>
+                <view class="at-col">
+                    <raw-link url="{{isLogin ? '/pages/member_order?status=' + OrderStatus.WAIT_PAY.value : ApiConstant.LOGIN}}" __triggerObserer="{{ _triggerObserer }}">
+                        <view class="item"><text class="iconfont"></text>
+                            <view class="text">待付款</view>
+                        </view>
+                    </raw-link>
+                </view>
+                <view class="at-col">
+                    <raw-link url="{{isLogin ? '/pages/member_order' : ApiConstant.LOGIN}}" __triggerObserer="{{ _triggerObserer }}">
+                        <view class="item"><text class="iconfont"></text>
+                            <view class="text">全部订单</view>
+                        </view>
+                    </raw-link>
+                </view>
+            </view>
+        </view>
+        <view class="pb-member-panel">
+            <view class="title">我的服务</view>
+            <view class="at-row">
+                <view class="at-col">
+                    <raw-link url="{{isLogin ? '/pages/store_owner' : ApiConstant.LOGIN}}" __triggerObserer="{{ _triggerObserer }}">
+                        <view class="item"><text class="iconfont"></text>
+                            <view class="text">团长信息</view>
+                        </view>
+                    </raw-link>
+                </view>
+                <view class="at-col">
+                    <raw-link url="{{isLogin ? '/pages/store_list' : ApiConstant.LOGIN}}" __triggerObserer="{{ _triggerObserer }}">
+                        <view class="item"><text class="iconfont"></text>
+                            <view class="text">切换小区</view>
+                        </view>
+                    </raw-link>
+                </view>
+                <view class="at-col">
+                    <raw-link url="/pages/store_join" __triggerObserer="{{ _triggerObserer }}">
+                        <view class="item"><text class="iconfont"></text>
+                            <view class="text">团长招募</view>
+                        </view>
+                    </raw-link>
+                </view>
+            </view>
+        </view>
+        <block wx:if="{{store.config}}">
+            <view class="pb-member-panel">
+                <view class="title">在线客服</view>
+                <view class="body">
+                    <placeholder __triggerObserer="{{ _triggerObserer }}"></placeholder>
+                    <rich-text nodes="{{store.config.setting.customerServiceInfo}}"></rich-text>
+                </view>
+            </view>
+        </block>
+        <view class="pb-member-footer">
+            <view class="at-row">
+                <view class="at-col">
+                    <view bindtap="anonymousFunc0"><text class="iconfont"></text>我的授权</view>
+                </view>
+                <view class="at-col">
+                    <raw-link url="/pages/about" __triggerObserer="{{ _triggerObserer }}"><text class="iconfont"></text>技术支持</raw-link>
+                </view>
+                <view class="at-col">版本:v2.0.0</view>
+            </view>
+        </view>
+    </view>
+</block>

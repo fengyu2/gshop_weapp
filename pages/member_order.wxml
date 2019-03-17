@@ -1,0 +1,17 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <at-tabs current="{{tabIndex}}" __triggerObserer="{{ _triggerObserer }}" tabList="{{tabs}}" bindonclick="anonymousFunc0" __fn_onClick="{{true}}"></at-tabs>
+        <order-item item="{{item}}" __triggerObserer="{{ _triggerObserer }}" bindonshowqrcode="doShowQrcode" bindonrefresh="onRefresh" wx:for="{{records}}" wx:for-item="item" __fn_onShowQrcode="{{true}}" __fn_onRefresh="{{true}}"></order-item>
+        <block wx:if="{{empty}}">
+            <list-empty __triggerObserer="{{ _triggerObserer }}"></list-empty>
+        </block>
+        <block wx:if="{{loading}}">
+            <list-loading __triggerObserer="{{ _triggerObserer }}"></list-loading>
+        </block>
+        <block wx:if="{{noMore}}">
+            <list-no-more __triggerObserer="{{ _triggerObserer }}"></list-no-more>
+        </block>
+        <order-consign-qrcode bindonref="anonymousFunc1" __triggerObserer="{{ _triggerObserer }}" __fn_onRef="{{true}}"></order-consign-qrcode>
+    </view>
+</block>

@@ -1,0 +1,17 @@
+<block>
+    <view class="item">
+        <view class="line">
+            <view class="more">
+                <block wx:if="{{StoreMoneyCashStatus.VERIFYING.value === item.status}}"><text class="pb-text-muted">{{StoreMoneyCashStatus.VERIFYING.name}}</text>
+                </block>
+                <block wx:if="{{StoreMoneyCashStatus.FAIL.value === item.status}}"><text class="pb-text-warning">{{StoreMoneyCashStatus.FAIL.name}}</text>
+                </block>
+                <block wx:if="{{StoreMoneyCashStatus.SUCCESS.value === item.status}}"><text class="pb-text-success">{{StoreMoneyCashStatus.SUCCESS.name}}</text>
+                </block>
+            </view>金额：¥{{item.money}}</view>
+        <view>时间：{{item.created_at}}</view>
+        <block wx:if="{{!!item.remark}}">
+            <view>备注：{{item.remark}}</view>
+        </block>
+    </view>
+</block>

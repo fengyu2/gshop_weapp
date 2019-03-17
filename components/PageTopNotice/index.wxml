@@ -1,0 +1,3 @@
+<block>
+    <view class="pb-page-top-notice">{{content}}</view>
+</block>

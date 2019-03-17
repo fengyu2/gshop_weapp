@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index"
+  },
+  "navigationBarTitleText": "关于我们"
+}

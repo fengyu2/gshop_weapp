@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "header": "../components-app/Header/index",
+    "page-store-picker": "../components-app/PageStorePicker/index",
+    "at-button": "../npm/taro-ui/dist/weapp/components/button/index",
+    "store-commission-item": "../components-app/StoreCommissionItem/index"
+  },
+  "navigationBarTitleText": "推广佣金"
+}

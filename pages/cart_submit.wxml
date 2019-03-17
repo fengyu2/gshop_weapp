@@ -1,0 +1,50 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <page-top-notice content="提货地址为小区团长地址，到货后请到该地址自提。" __triggerObserer="{{ _triggerObserer }}"></page-top-notice>
+        <view class="pb-cart-submit-address">
+            <view class="icon iconfont"></view>
+            <view class="address">提货地址：{{store.addressArea}}{{store.addressDetail}}</view>
+            <view class="name">团长：{{store.addressName}}{{store.addressPhone}}</view>
+        </view>
+        <view class="pb-cart-submit-form">
+            <view class="title">提货人信息</view>
+            <at-form __triggerObserer="{{ _triggerObserer }}">
+                <at-input name="{{anonymousState__temp}}" __triggerObserer="{{ _triggerObserer }}" clear="{{true}}" title="提货人姓名" type="text" placeholder="输入姓名" value="{{consigneeName}}" bindonchange="anonymousFunc0" __fn_onChange="{{true}}"></at-input>
+                <at-input name="{{anonymousState__temp2}}" __triggerObserer="{{ _triggerObserer }}" clear="{{true}}" title="提货人手机" type="text" placeholder="输入手机" value="{{consigneePhone}}" bindonchange="anonymousFunc1" __fn_onChange="{{true}}"></at-input>
+            </at-form>
+        </view>
+        <placeholder __triggerObserer="{{ _triggerObserer }}"></placeholder>
+        <order-goods-item item="{{item}}" __triggerObserer="{{ _triggerObserer }}" wx:for="{{records}}" wx:for-item="item"></order-goods-item>
+        <view class="pb-cart-submit-form">
+            <view class="title">其他信息</view>
+            <at-form __triggerObserer="{{ _triggerObserer }}">
+                <at-input name="{{anonymousState__temp3}}" __triggerObserer="{{ _triggerObserer }}" clear="{{true}}" title="备注" type="text" placeholder="可选" value="{{remark}}" bindonchange="anonymousFunc2" __fn_onChange="{{true}}"></at-input>
+            </at-form>
+        </view>
+        <block wx:if="{{!confirmShow}}">
+            <view class="pb-cart-submit-toolbox-placeholder"></view>
+        </block>
+        <block wx:if="{{!confirmShow}}">
+            <view class="pb-cart-submit-toolbox">
+                <view class="submit" bindtap="anonymousFunc3">提交订单</view>
+                <view class="price">实付：¥ {{feeTotal}}</view>
+            </view>
+        </block>
+        <at-float-layout isOpened="{{confirmShow}}" __triggerObserer="{{ _triggerObserer }}" title="确认支付" bindonclose="anonymousFunc4" __fn_onClose="{{true}}">
+            <view class="pb-cart-submit-confirm">
+                <view class="title">此商品需要您到团长处自提，请确认收货地址！</view>
+                <view class="address">
+                    <view class="item">小区名称：{{store.name}}</view>
+                    <view class="item">提货地址：{{store.addressArea}}{{store.addressDetail}}</view>
+                </view>
+                <view class="price">
+                    <view class="value">¥ {{feeTotal}}</view>商品金额</view>
+                <view class="action">
+                    <view class="cancel" bindtap="anonymousFunc5">修改订单</view>
+                    <view class="submit" bindtap="doSubmit">确认支付</view>
+                </view>
+            </view>
+        </at-float-layout>
+    </view>
+</block>

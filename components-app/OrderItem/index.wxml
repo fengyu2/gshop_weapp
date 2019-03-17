@@ -1,0 +1,47 @@
+<block>
+    <view class="pb-order-item">
+        <view class="basic">
+            <block wx:if="{{item.status === OrderStatus.WAIT_PAY.value}}">
+                <view class="status pb-text-warning">待付款</view>
+            </block>
+            <block wx:if="{{item.status === OrderStatus.WAIT_SHIPPING.value}}">
+                <view class="status pb-text-warning">待发货</view>
+            </block>
+            <block wx:if="{{item.status === OrderStatus.SHIPPING.value}}">
+                <view class="status pb-text-warning">运输中</view>
+            </block>
+            <block wx:if="{{item.status === OrderStatus.WAIT_SIGN.value}}">
+                <view class="status pb-text-warning">待取货</view>
+            </block>
+            <block wx:if="{{item.status === OrderStatus.COMPLETED.value}}">
+                <view class="status pb-text-warning">已完成</view>
+            </block>
+            <block wx:if="{{item.status === OrderStatus.CANCEL_EXPIRED.value}}">
+                <view class="status pb-text-warning">已过期</view>
+            </block>
+            <block wx:if="{{item.status === OrderStatus.CANCEL.value}}">
+                <view class="status pb-text-warning">已过期</view>
+            </block>订单：{{item.sn}}</view>
+        <view class="goods">
+            <order-goods-item item="{{orderGoodsItem}}" __triggerObserer="{{ _triggerObserer }}" wx:for="{{item.orderGoods}}" wx:for-item="orderGoodsItem"></order-goods-item>
+        </view>
+        <block wx:if="{{OrderStatus.SHIPPING.value === item.status || OrderStatus.WAIT_SIGN === item.status}}">
+            <view class="code">提货码：{{item.consign.code}}</view>
+        </block>
+        <view class="action">
+            <view class="time">{{item.created_at}}</view>
+            <block wx:if="{{showDetail}}">
+                <navigator class="btn" url="{{'/pages/member_order_detail?id=' + item.id}}">查看详情</navigator>
+            </block>
+            <block wx:if="{{item.status === OrderStatus.SHIPPING.value}}">
+                <navigator class="btn" url="{{'/pages/member_order_detail?id=' + item.id}}">查看物流</navigator>
+            </block>
+            <block wx:if="{{item.status === OrderStatus.WAIT_PAY.value}}">
+                <view class="btn main" bindtap="doPay">立即付款</view>
+            </block>
+            <block wx:if="{{item.status === OrderStatus.WAIT_SIGN.value}}">
+                <view class="btn main" bindtap="doShowQrcode">二维码提货</view>
+            </block>
+        </view>
+    </view>
+</block>

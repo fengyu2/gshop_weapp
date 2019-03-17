@@ -1,0 +1,16 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <page-store-picker bindonchange="anonymousFunc0" __triggerObserer="{{ _triggerObserer }}" __fn_onChange="{{true}}"></page-store-picker>
+        <store-order-item item="{{item}}" __triggerObserer="{{ _triggerObserer }}" wx:for="{{records}}" wx:for-item="item"></store-order-item>
+        <block wx:if="{{empty}}">
+            <list-empty __triggerObserer="{{ _triggerObserer }}"></list-empty>
+        </block>
+        <block wx:if="{{loading}}">
+            <list-loading __triggerObserer="{{ _triggerObserer }}"></list-loading>
+        </block>
+        <block wx:if="{{noMore}}">
+            <list-no-more __triggerObserer="{{ _triggerObserer }}"></list-no-more>
+        </block>
+    </view>
+</block>

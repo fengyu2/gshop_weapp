@@ -1,0 +1,10 @@
+<block>
+    <view class="pb-page-store-picker">
+        <picker mode="selector" range="{{stores}}" range-key="name" bindchange="onChange">
+            <block wx:if="{{stores.length > 1}}">
+                <view class="switch">[切换]</view>
+            </block>
+            <view class="picker">当前社区店：{{anonymousState__temp}}</view>
+        </picker>
+    </view>
+</block>

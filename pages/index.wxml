@@ -1,0 +1,24 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-search-bar">
+            <at-search-bar value="{{keyword}}" __triggerObserer="{{ _triggerObserer }}" bindonchange="anonymousFunc0" bindonactionclick="doSearch" bindonconfirm="doSearch" __fn_onChange="{{true}}" __fn_onActionClick="{{true}}" __fn_onConfirm="{{true}}"></at-search-bar>
+        </view>
+        <scroll-view scroll-x="{{true}}" class="pb-category-container">
+            <view class="pb-category">
+                <view bindtap="anonymousFunc1" class="{{'item ' + (categoryId == 0 ? 'active' : '')}}">全部</view>
+                <view bindtap="anonymousFunc2" class="{{'item ' + (categoryId == o.$original.id ? 'active' : '')}}" wx:for="{{loopArray0}}" wx:for-item="o" wx:for-index="__index2" data-e-tap-so="this" data-e-tap-a-a="{{__index2}}">{{o.$original.title}}</view>
+            </view>
+        </scroll-view>
+        <goods-item item="{{goods}}" __triggerObserer="{{ _triggerObserer }}" wx:for="{{records}}" wx:for-item="goods"></goods-item>
+        <block wx:if="{{empty}}">
+            <list-empty __triggerObserer="{{ _triggerObserer }}"></list-empty>
+        </block>
+        <block wx:if="{{loading}}">
+            <list-loading __triggerObserer="{{ _triggerObserer }}"></list-loading>
+        </block>
+        <block wx:if="{{noMore}}">
+            <list-no-more __triggerObserer="{{ _triggerObserer }}"></list-no-more>
+        </block>
+    </view>
+</block>

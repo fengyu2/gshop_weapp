@@ -1,0 +1,15 @@
+<block>
+    <view class="item">
+        <view class="line">
+            <view class="more">
+                <block wx:if="{{StoreCommissionStatus.CANCELED.value === item.status}}"><text class="pb-text-muted">{{StoreCommissionStatus.CANCELED.name}}</text>
+                </block>
+                <block wx:if="{{StoreCommissionStatus.WAIT_CONFIRM.value === item.status}}"><text class="pb-text-warning">{{StoreCommissionStatus.WAIT_CONFIRM.name}}</text>
+                </block>
+                <block wx:if="{{StoreCommissionStatus.SUCCESS.value === item.status}}"><text class="pb-text-success">{{StoreCommissionStatus.SUCCESS.name}}</text>
+                </block>
+            </view>订单：{{item.orderSn}}</view>
+        <view class="line">金额：¥{{item.fee}}</view>
+        <view>时间：{{item.created_at}}</view>
+    </view>
+</block>

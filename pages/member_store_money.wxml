@@ -1,0 +1,42 @@
+<block>
+    <view class="index">
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <page-store-picker bindonchange="anonymousFunc0" __triggerObserer="{{ _triggerObserer }}" __fn_onChange="{{true}}"></page-store-picker>
+        <view class="pb-member-store-money">
+            <view class="text">您的推广佣金总额</view>
+            <view class="total">¥<text class="value">{{total}}</text>元</view>
+            <view class="detail">
+                <view class="item">
+                    <navigator url="{{'/pages/member_store_money_log?storeId=' + storeId}}">
+                        <view class="title">可提现</view>
+                        <view class="value">¥ {{total}}</view>
+                    </navigator>
+                </view>
+                <view class="item">
+                    <view class="title">待到账</view>
+                    <view class="value">¥ {{waitConfirm}}</view>
+                </view>
+                <view class="item">
+                    <navigator url="{{'/pages/member_store_money_cash_log?storeId=' + storeId}}">
+                        <view class="title">已提现</view>
+                        <view class="value">¥ {{cashedTotal}}</view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="button">
+                <navigator url="{{'/pages/member_store_money_cash?storeId=' + storeId}}">
+                    <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" size="normal"><text class="iconfont"></text>立即提现</at-button>
+                </navigator>
+            </view>
+            <view class="pb-panel list">
+                <view class="head">
+                    <view class="more">
+                        <navigator class="text" url="{{'/pages/member_store_commission?storeId=' + storeId}}">更多>></navigator>
+                    </view>最近佣金</view>
+                <view class="body">
+                    <store-commission-item item="{{item}}" __triggerObserer="{{ _triggerObserer }}" wx:for="{{commissionList}}" wx:for-item="item"></store-commission-item>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

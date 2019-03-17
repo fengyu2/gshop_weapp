@@ -1,0 +1,41 @@
+<block>
+    <view>
+        <block wx:if="{{ApiConstant.ENV === ApiConstant.ENV_WEAPP}}">
+            <canvas canvas-id="myCanvas" style="{{anonymousState__temp}}"></canvas>
+        </block>
+        <view class="pb-image-cropper" id="hHWwt">
+            <block wx:if="{{!cutterShow}}">
+                <view class="pb-image-cropper-preview">
+                    <image class="pb-image-cropper-preview-image" style="{{anonymousState__temp2}}" src="{{previewImage}}"></image>
+                </view>
+            </block>
+            <block wx:if="{{cutterShow}}">
+                <view class="pb-image-cropper-cutter">
+                    <view class="pb-image-cropper-cutter-container">
+                        <image class="pb-image-cropper-cutter-image" style="{{anonymousState__temp3}}" src="{{cutterImage}}"></image>
+                        <view class="pb-image-cropper-dashed-h"></view>
+                        <view class="pb-image-cropper-dashed-v"></view>
+                        <view class="pb-image-cropper-cutter-box" style="{{anonymousState__temp4}}" bindtouchstart="onCropperTouchStart" bindtouchmove="onCropperTouchMove" bindtouchend="onCropperTouchEnd">
+                            <view class="pb-image-cropper-point point-tr"></view>
+                            <view class="pb-image-cropper-point point-rb" bindtouchstart="onCropperResizeTouchStart" bindtouchmove="onCropperResizeTouchMove" bindtouchend="onCropperResizeTouchEnd"></view>
+                            <view class="pb-image-cropper-point point-bl"></view>
+                            <view class="pb-image-cropper-point point-lt"></view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="pb-image-cropper-button">
+                <view>
+                    <view class="at-row">
+                        <view class="at-col">
+                            <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" bindonclick="doConfirmImage" __fn_onClick="{{true}}">确定</at-button>
+                        </view>
+                        <view class="at-col">
+                            <at-button bindonclick="doChooseImage" __triggerObserer="{{ _triggerObserer }}" __fn_onClick="{{true}}">选择图片</at-button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

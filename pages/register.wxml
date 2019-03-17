@@ -1,0 +1,19 @@
+<block>
+    <view>
+        <header title="{{config.navigationBarTitleText}}" __triggerObserer="{{ _triggerObserer }}"></header>
+        <view class="pb-form">
+            <at-form __triggerObserer="{{ _triggerObserer }}">
+                <at-input name="{{anonymousState__temp}}" __triggerObserer="{{ _triggerObserer }}" title="用户" type="text" placeholder="输入用户名" value="{{username}}" clear="{{true}}" bindonchange="anonymousFunc0" __fn_onChange="{{true}}"></at-input>
+                <at-input name="{{anonymousState__temp2}}" __triggerObserer="{{ _triggerObserer }}" title="密码" type="password" placeholder="输入密码" clear="{{true}}" value="{{password}}" bindonchange="anonymousFunc1" __fn_onChange="{{true}}"></at-input>
+                <at-input name="{{anonymousState__temp3}}" __triggerObserer="{{ _triggerObserer }}" title="重复密码" type="password" placeholder="重复输入密码" clear="{{true}}" value="{{passwordRepeat}}" bindonchange="anonymousFunc2" __fn_onChange="{{true}}"></at-input>
+            </at-form>
+            <view class="pb-form-submit">
+                <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" bindonclick="anonymousFunc3" __fn_onClick="{{true}}">提交</at-button>
+            </view>
+        </view>
+        <view class="pb-padding-h pb-padding-v pb-text-center">
+            <link url="/pages/login" __triggerObserer="{{ _triggerObserer }}">立即登录</link><text class="pb-text-splitter">|</text>
+            <link url="/pages/retrieve" __triggerObserer="{{ _triggerObserer }}">忘记密码</link>
+        </view>
+    </view>
+</block>
